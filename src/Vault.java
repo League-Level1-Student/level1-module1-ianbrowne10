@@ -1,9 +1,14 @@
+import java.util.Random;
 
 public class Vault {
-int randomNumber = new Random.nextInt(1000000);
-	int secretCode = randomNumber;
+private int thecode;
+Vault(){
+	// thecode = new Random().nextInt(1000000);
+thecode = 1000001;
+}
+
 boolean tryCode(int code) {
-if(code==secretCode) {
+if(code==thecode) {
 	return true;
 }
 else {
