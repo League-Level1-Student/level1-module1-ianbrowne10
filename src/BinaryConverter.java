@@ -1,3 +1,4 @@
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
@@ -9,7 +10,7 @@ import javax.swing.JTextField;
 
 public class BinaryConverter implements MouseListener {
  
-	
+
 JFrame frame = new JFrame();
 JPanel pan = new JPanel();
 JLabel lab = new JLabel();
@@ -20,13 +21,14 @@ new BinaryConverter().converter();
 }
 private void converter() {
 	frame.setVisible(true);
-	frame.setSize(300, 300);
+	frame.setSize(300, 400);
 	frame.add(pan);
 	pan.add(text);
 pan.add(button);
 pan.add(lab);
 frame.pack();
 button.addMouseListener(this);
+lab.setText("A");
 }
 String convert(String input) {
     if(input.length() != 8){
@@ -46,5 +48,34 @@ String convert(String input) {
          JOptionPane.showMessageDialog(null, "Enter a binary, silly!!!");
          return "-";
     }
+}
+@Override
+public void mouseClicked(MouseEvent e) {
+	// TODO Auto-generated method stub
+	System.out.println("mouse clicked");
+String textField = text.getText();
+String output = convert(textField);
+lab.setText(output);
+frame.pack();
+}
+@Override
+public void mousePressed(MouseEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+@Override
+public void mouseReleased(MouseEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+@Override
+public void mouseEntered(MouseEvent e) {
+	// TODO Auto-generated method stub
+	
+}
+@Override
+public void mouseExited(MouseEvent e) {
+	// TODO Auto-generated method stub
+	
 }
 }
